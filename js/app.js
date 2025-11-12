@@ -382,7 +382,6 @@ class GameUI {
         this.startButton = options.startButton;
         this.scoreDisplay = options.scoreDisplay;
         this.highScoreList = options.highScoreList;
-        this.turnIndicator = options.turnIndicator;
         this.gameContainer = options.gameContainer;
         
         // Event listeners
@@ -413,16 +412,14 @@ class GameUI {
     }
     
     // Show player input form
-    showPlayerInput(playerNumber = 1) {
+    showPlayerInput() {
         const container = this.playerInput.closest('#player-input-container');
         if (container) {
             container.style.display = 'block';
         }
         this.playerInput.value = '';
         this.playerInput.focus();
-        
-        // Update placeholder based on player number
-        this.playerInput.placeholder = `Player ${playerNumber}: Enter your name`;
+        this.playerInput.placeholder = 'Enter your name';
     }
     
     // Hide player input form
@@ -523,16 +520,14 @@ class GameUI {
         });
     }
     
-    // Show turn indicator
-    showTurnIndicator(playerNumber, playerName) {
-        this.turnIndicator.textContent = `Player ${playerNumber}: ${playerName}'s turn`;
-        this.turnIndicator.style.display = 'block';
+    // Show turn indicator (optional, not used in single-player)
+    showTurnIndicator(playerName) {
+        // Not used in single-player mode
     }
     
-    // Hide turn indicator
+    // Hide turn indicator (optional, not used in single-player)
     hideTurnIndicator() {
-        this.turnIndicator.textContent = '';
-        this.turnIndicator.style.display = 'none';
+        // Not used in single-player mode
     }
     
     // Show error message
@@ -577,37 +572,7 @@ class SnakeGameApp {
         this.game = null;
         this.ui = null;
         this.storage = null;
-        
-        // Two-player state
-        this.currentPlayer = null;
-        this.player1Name = null;
-        this.player2Name = null;
-    }
-    
-    // Get current player number
-    getCurrentPlayer() {
-        return this.currentPlayer;
-    }
-    
-    // Get current player name
-    getCurrentPlayerName() {
-        if (this.currentPlayer === 1) {
-            return this.player1Name;
-        } else if (this.currentPlayer === 2) {
-            return this.player2Name;
-        }
-        return null;
-    }
-    
-    // Switch player
-    switchPlayer() {
-        if (this.currentPlayer === null) {
-            this.currentPlayer = 1;
-        } else if (this.currentPlayer === 1) {
-            this.currentPlayer = 2;
-        } else {
-            this.currentPlayer = 1;
-        }
+        this.currentPlayerName = null;
     }
     
     // Initialize application and load initial state
@@ -621,7 +586,6 @@ class SnakeGameApp {
             startButton: document.getElementById('start-button'),
             scoreDisplay: document.getElementById('score-display'),
             highScoreList: document.getElementById('high-score-list'),
-            turnIndicator: document.getElementById('turn-indicator'),
             gameContainer: document.getElementById('game-container')
         });
         
@@ -633,10 +597,8 @@ class SnakeGameApp {
         // Load and display high scores
         await this.loadHighScores();
         
-        // Show player input for player 1
-        this.currentPlayer = 1;
-        this.ui.showPlayerInput(1);
-        this.ui.showTurnIndicator(1, 'Waiting...');
+        // Show player input
+        this.ui.showPlayerInput();
         
         console.log('Snake Game initialized');
     }
@@ -655,18 +617,12 @@ class SnakeGameApp {
     // Start game for a player
     startGame(playerName) {
         // Store player name
-        if (this.currentPlayer === 1) {
-            this.player1Name = playerName;
-        } else if (this.currentPlayer === 2) {
-            this.player2Name = playerName;
-        }
+        this.currentPlayerName = playerName;
         
         // Hide player input and high scores, show game
         this.ui.hidePlayerInput();
+        this.ui.hideTurnIndicator();
         document.getElementById('game-container').classList.add('game-active');
-        
-        // Update turn indicator
-        this.ui.showTurnIndicator(this.currentPlayer, this.getCurrentPlayerName());
         
         // Initialize game
         this.game = new Game(this.canvas, {
@@ -744,7 +700,7 @@ class SnakeGameApp {
         // Save score to storage
         try {
             const round = {
-                playerName: this.getCurrentPlayerName(),
+                playerName: this.currentPlayerName,
                 score: score,
                 timestamp: Date.now()
             };
@@ -766,12 +722,8 @@ class SnakeGameApp {
         // Show game over
         this.ui.showGameOver(score, reason);
         
-        // Switch to next player
-        this.switchPlayer();
-        
-        // Show player input for next player
-        this.ui.showPlayerInput(this.currentPlayer);
-        this.ui.showTurnIndicator(this.currentPlayer, this.getCurrentPlayerName() || 'Waiting...');
+        // Show player input for next game
+        this.ui.showPlayerInput();
     }
 }
 

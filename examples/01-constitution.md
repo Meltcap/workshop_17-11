@@ -2,7 +2,7 @@
 
 speckit constitution
 
-We are a diverse team building a simple two-player Snake Game for learning purposes.
+We are a diverse team building a simple Snake Game for learning purposes.
 
 **Our working rules:**
 - Everyone can contribute, regardless of coding experience.

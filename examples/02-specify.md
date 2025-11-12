@@ -2,7 +2,7 @@
 
 speckit specify
 
-We want to build a simple browser-based Snake Game that two people can play in turns.
+We want to build a simple browser-based Snake Game that people can play.
 
 **Requirements:**
 - Each player enters their name before playing.

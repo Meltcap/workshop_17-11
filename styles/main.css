@@ -77,23 +77,6 @@ body::before {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#turn-indicator {
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-    min-height: 24px;
-    padding: 4px 10px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 4px;
-    border: 1px solid rgba(55, 149, 150, 0.3);
-}
-
-.game-active #turn-indicator {
-    background-color: rgba(255, 255, 255, 0.95);
-    border: 2px solid var(--primary-color);
-}
-
 #player-name-input {
     padding: 8px 12px;
     font-size: 15px;
