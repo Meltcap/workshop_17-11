@@ -1,0 +1,37 @@
+/* Game-specific styling */
+
+#game-canvas {
+    display: none;
+    border: 3px solid var(--content-color);
+    /* Position canvas inside white rectangle of BG.png */
+    position: relative;
+    margin: 15px auto;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.game-active #game-canvas {
+    display: block;
+}
+
+.game-active #high-score-container {
+    display: none;
+}
+
+.game-active #player-input-container {
+    display: none;
+}
+
+/* Game over state visual feedback */
+#game-canvas.game-over {
+    opacity: 0.7;
+    filter: grayscale(0.5);
+}
+
+/* Performance optimization for canvas rendering */
+#game-canvas {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+

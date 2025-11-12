@@ -31,7 +31,18 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Verify compliance with all applicable principles from `.specify/memory/constitution.md`:
+
+- **Inclusive Collaboration**: Does the design allow contributions from all skill levels?
+- **Open Communication**: Are design decisions documented and accessible to all team members?
+- **Score Persistence**: If this feature involves game data, does it properly save player names and scores?
+- **Single Player Per Round**: Does the feature maintain the single-player-per-round constraint?
+- **High Score Tracking**: If relevant, does the feature support high score tracking?
+- **Collaborative Decision Making**: Have design decisions been discussed with the team?
+- **FD BUSINESS Color Scheme**: Do all visual elements use the specified color scheme?
+- **Game Area Layout**: If modifying the game canvas, does it remain within the BG.png white rectangle?
+
+Document any violations or necessary deviations in the Complexity Tracking section below.
 
 ## Project Structure
 

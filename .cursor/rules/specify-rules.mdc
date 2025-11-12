@@ -1,0 +1,31 @@
+# Snake-game Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2025-11-12
+
+## Active Technologies
+- Browser localStorage API (simulating local JSON file persistence) (001-snake-game)
+
+- JavaScript (ES6+), HTML5, CSS3 + None (vanilla JavaScript) or lightweight libraries for canvas/game loop if needed (001-snake-game)
+
+## Project Structure
+
+```text
+src/
+tests/
+```
+
+## Commands
+
+npm test && npm run lint
+
+## Code Style
+
+JavaScript (ES6+), HTML5, CSS3: Follow standard conventions
+
+## Recent Changes
+- 001-snake-game: Added JavaScript (ES6+), HTML5, CSS3 + None (vanilla JavaScript) or lightweight libraries for canvas/game loop if needed
+
+- 001-snake-game: Added JavaScript (ES6+), HTML5, CSS3 + None (vanilla JavaScript) or lightweight libraries for canvas/game loop if needed
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->

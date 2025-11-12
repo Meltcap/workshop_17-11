@@ -1,50 +1,56 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: N/A → 1.0.0 (initial constitution)
+Modified principles: N/A (new file)
+Added sections: Core Principles, Visual Design Requirements, Collaborative Development, Governance
+Removed sections: N/A
+Templates requiring updates:
+  ✅ plan-template.md - Constitution Check section references constitution principles
+  ✅ spec-template.md - No direct constitution references, but aligns with collaborative principles
+  ✅ tasks-template.md - No direct constitution references, but aligns with collaborative principles
+Follow-up TODOs: None
+-->
+
+# Snake Game Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Inclusive Collaboration
+Everyone can contribute, regardless of coding experience. The project welcomes all team members and values diverse perspectives and skill levels. Learning and growth are core objectives of this project.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Open Communication
+We discuss ideas openly and help each other. All team members are encouraged to share thoughts, ask questions, and provide assistance. Transparent communication ensures everyone stays informed and can contribute effectively.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Score Persistence
+After each game, player names and scores MUST be saved. The system MUST persist game results to enable tracking and historical analysis. This ensures players can see their progress over time.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Single Player Per Round with High Score Tracking
+Only one player plays per round; high scores are tracked. Each game session involves a single player, and the system MUST maintain and display high score records. This principle ensures clear game flow and competitive tracking.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Collaborative Decision Making
+All decisions and problems are shared and solved together. No unilateral decisions are made; the team discusses and reaches consensus on changes, issues, and improvements. This ensures collective ownership and alignment.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Visual Design Requirements
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### VI. FD BUSINESS Color Scheme
+The game MUST use the FD BUSINESS color scheme and be visually styled to match. All UI elements, graphics, and visual components must adhere to the specified brand colors and styling guidelines.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### VII. Game Area Layout Constraint
+The snake game area MUST be placed inside the white rectangle of the provided BG.png image. The game canvas must be positioned and sized to fit within the designated white rectangle area of the background image, ensuring proper visual integration.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other practices and guidelines. Amendments require:
+- Team discussion and consensus
+- Documentation of the rationale for change
+- Update to this constitution file with version increment
+- Propagation of changes to dependent templates and documentation
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Versioning Policy**: Follow semantic versioning (MAJOR.MINOR.PATCH):
+- **MAJOR**: Backward incompatible principle removals or redefinitions
+- **MINOR**: New principle/section added or materially expanded guidance
+- **PATCH**: Clarifications, wording improvements, typo fixes, non-semantic refinements
+
+**Compliance Review**: All implementation plans, feature specifications, and code changes must verify compliance with these principles. The Constitution Check section in implementation plans must explicitly validate adherence to all applicable principles.
+
+**Version**: 1.0.0 | **Ratified**: 2025-01-27 | **Last Amended**: 2025-01-27

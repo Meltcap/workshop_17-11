@@ -1,0 +1,6 @@
+---
+alwaysApply: true
+---
+- You will not set default values for .env variables in the codebase
+- You include CLI-logging in necessary point in the codebase, do not use any emoticons/emoji's in the logging
+- We want full traceability of data objects in the Postgres DB

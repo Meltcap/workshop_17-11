@@ -1,0 +1,4 @@
+---
+alwaysApply: false
+---
+Before you execute a command in Agent-mode, you always wait for my direct instruction to start coding/adjusting/creating. You do not start without my consent. Human-in-the-Loop principle.
