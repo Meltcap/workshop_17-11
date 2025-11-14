@@ -64,29 +64,21 @@ Deze workshop leert je:
 
 ### Snake Game
 
-**Specificaties bekijken:** `examples Snake/`
-
-1. Lees `01-constitution.md` (projectprincipes)
-2. Bekijk `02-specify.md` (feature specificatie)
-3. Bestudeer `03-plans.md` (implementatieplan)
-
-**Implementatie uitproberen:**
-
-1. Open `index.html` in je browser
-2. Speel het spel om vertrouwd te raken met browser-based development
+1. Start een nieuw project in Cursor
+2. Kopieer de inhoud van `examples Snake/01-constitution.md` in de chat
+3. Kopieer de inhoud van `examples Snake/02-specify.md` in de chat
+4. Kopieer de inhoud van `examples Snake/03-plans.md` in de chat
+5. Voer `/speckit.tasks` uit
+6. Voer `/speckit.implement` uit
 
 ### Finnhub Dashboard
 
-**Specificaties bekijken:** `examples Finnhub/`
-
-1. Lees `01-constitution.md` (projectprincipes)
-2. Bekijk `02-specify.md` (feature specificatie)
-3. Bestudeer `03-plans.md` (implementatieplan)
-
-**Implementatie bouwen:**
-
-1. Configureer API keys in `script.js`
-2. Open de applicatie in je browser
+1. Start een nieuw project in Cursor
+2. Kopieer de inhoud van `examples Finnhub/01-constitution.md` in de chat
+3. Kopieer de inhoud van `examples Finnhub/02-specify.md` in de chat
+4. Kopieer de inhoud van `examples Finnhub/03-plans.md` in de chat
+5. Voer `/speckit.tasks` uit
+6. Voer `/speckit.implement` uit
 
 ## 🛠️ Technische Principes
 
