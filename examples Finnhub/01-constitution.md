@@ -15,9 +15,8 @@ Runs entirely in the browser; no backend, no tooling, no frameworks.
 • Tech stack  
 Plain HTML, CSS, vanilla JavaScript.  
 Fetch API for all HTTP requests.  
-Chart.js via CDN for charts.  
-Finnhub REST API for market data.  
-Google Gemini REST API for generating short educational text.  
+Finnhub REST API for market data and financial metrics.  
+LiteLLM proxy API for generating short educational text.  
 API keys may be placed in script.js for workshop/demo use only.
 
 • Code quality  
@@ -37,7 +36,7 @@ Use localStorage for a small JSON object (last symbol, brief advice history).
 Gracefully handle empty or invalid stored data with minimal fallback logic.
 
 • AI behaviour  
-Gemini should produce short, balanced, educational insights.  
+LiteLLM AI responses should produce short, balanced, educational insights.  
 No financial advice, no risky behaviour, always include disclaimers.
 
 • Testing  

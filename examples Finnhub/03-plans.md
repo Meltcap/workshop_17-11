@@ -7,6 +7,7 @@ Make a plan with the following tech requirements:
 ## Tech stack and runtime environment
 
 This is a pure client-side web app:
+
 - Plain HTML, CSS, vanilla JavaScript
 - No backend, no frameworks, no build tooling, no Docker
 - Use the browser Fetch API for all HTTP calls
@@ -15,14 +16,16 @@ This is a pure client-side web app:
 ## API Configuration
 
 **Finnhub REST API** (free tier - quote endpoint only):
+
 - Endpoint: `https://finnhub.io/api/v1/quote`
-- Example: https://finnhub.io/api/v1/quote?symbol=AAPL&token=YOUR_KEY
+- Example: `https://finnhub.io/api/v1/quote?symbol=AAPL&token=YOUR_KEY`
 - Authentication: Query parameter (`?token=YOUR_KEY`)
 - Response: Current price, daily change, previous close
-- Documentation: https://finnhub.io/docs/api/introduction
+- Documentation: `https://finnhub.io/docs/api/introduction`
 - **Note:** Candle endpoint NOT available on free tier
 
 **LiteLLM Proxy** (OpenAI-compatible):
+
 - Base URL: `https://llmproxy.fd.nl`
 - Endpoint: `/v1/chat/completions`
 - Model: `Azure/gpt-5-mini`
@@ -30,6 +33,7 @@ This is a pure client-side web app:
 - Request format: OpenAI Chat Completions API
 
 Example LiteLLM call (Python reference):
+
 ```python
 from openai import OpenAI
 
@@ -46,6 +50,7 @@ print(response.choices[0].message.content)
 ```
 
 JavaScript equivalent:
+
 ```javascript
 const response = await fetch('https://llmproxy.fd.nl/v1/chat/completions', {
     method: 'POST',
@@ -69,6 +74,7 @@ const text = data.choices[0].message.content;
 ## API Keys
 
 Place at top of script.js as constants:
+
 ```javascript
 const FINNHUB_API_KEY = 'YOUR_FINNHUB_KEY_HERE';
 const LITELLM_API_KEY = 'YOUR_LITELLM_KEY_HERE';
@@ -79,6 +85,7 @@ const LITELLM_API_KEY = 'YOUR_LITELLM_KEY_HERE';
 ## Error handling and edge cases (technical)
 
 Handle:
+
 - Non-200 responses from Finnhub (401/403/429/5xx)
 - Invalid ticker symbols
 - LiteLLM failures (401/403/429/5xx), timeouts, invalid JSON
