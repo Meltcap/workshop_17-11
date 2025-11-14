@@ -1,7 +1,10 @@
 # 02-specify.md
 
-speckit specify
+## Instructies
+1. Typ `/speckit.specify` + onderstaande prompt in de cursor chat
+2. Klik op verstuur of ENTER.
 
+## Prompt
 We want to build a simple browser-based Snake Game that people can play.
 
 **Requirements:**

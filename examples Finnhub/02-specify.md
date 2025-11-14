@@ -1,7 +1,10 @@
 # 02-specify.md
 
-speckit specify
+## Instructies
+1. Typ `/speckit.specify` + onderstaande prompt in de cursor chat
+2. Klik op verstuur of ENTER.
 
+## Prompt
 For an AI-Enhanced Browser-Based Stock Dashboard
 
 I want to create a single-page web app that:

@@ -1,7 +1,10 @@
 # 01-constitution.md
 
-speckit constitution
+## Instructies
+1. Typ `/speckit.constitution` + onderstaande prompt in de cursor chat
+2. Klik op verstuur of ENTER.
 
+## Prompt
 We are a diverse team building a simple Snake Game for learning purposes.
 
 **Our working rules:**

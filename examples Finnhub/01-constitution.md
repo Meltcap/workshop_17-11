@@ -1,9 +1,10 @@
 # 01-constitution.md
 
-✅ **STATUS: COMPLETED** - Constitution created at `.specify/memory/constitution.md`
+## Instructies
+1. Typ `/speckit.constitution` + onderstaande prompt in de cursor chat
+2. Klik op verstuur of ENTER.
 
-speckit constitution
-
+## Prompt
 We are creating a very simple, browser-only educational project for a workshop about stock market data, with a small AI-powered advice feature.
 
 The principles should cover:

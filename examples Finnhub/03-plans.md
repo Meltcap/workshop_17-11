@@ -1,7 +1,10 @@
 # 03-plans.md
 
-speckit plans
+## Instructies
+1. Typ `/speckit.plan` + onderstaande prompt in de cursor chat
+2. Klik op verstuur of ENTER.
 
+## Prompt
 Make a plan with the following tech requirements:
 
 ## Tech stack and runtime environment

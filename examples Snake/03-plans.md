@@ -1,7 +1,10 @@
 # 03-plans.md
 
-speckit plans
+## Instructies
+1. Typ `/speckit.plan` + onderstaande prompt in de cursor chat
+2. Klik op verstuur of ENTER.
 
+## Prompt
 Create a high-level plan for building the Snake Game:
 
 - Design a clean HTML layout in FD BUSINESS style:
