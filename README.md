@@ -1,90 +1,134 @@
-# Snake Game
+# Workshop: Browser-Based Web Applications
 
-A browser-based Snake game with high score tracking. Built with vanilla JavaScript, HTML5, and CSS3.
+Workshop repository met voorbeeldprojecten voor het bouwen van browser-only web applicaties met vanilla JavaScript.
 
-## Features
+## 📚 Workshop Voorbeelden
 
-- **Core Snake Gameplay**: Control the snake with arrow keys, eat food to grow, avoid collisions
-- **Score Persistence**: Scores saved to browser localStorage
-- **High Score Display**: Top 3 high scores displayed when no game is active
-- **FD BUSINESS Styling**: Professional color scheme with custom background
-- **Offline Functionality**: Works completely offline, no server required
-- **Multiple Players**: Track scores for different players
+Deze repository bevat twee praktijkvoorbeelden die tijdens de workshop worden behandeld:
 
-## Quick Start
+### 1. Snake Game
 
-1. Open `index.html` in a modern web browser (Chrome, Firefox, Safari, Edge)
-2. Enter your name and click "Start Game"
-3. Control the snake with arrow keys (↑ ↓ ← →)
-4. After Game Over, play again or let another player take a turn
-5. High scores are automatically saved and displayed
+Een klassiek Snake spel met score tracking (referentie-implementatie).
 
-## Project Structure
+**Features:**
 
-```
-Snake-game/
-├── index.html          # Main HTML file
-├── styles/
-│   ├── main.css        # Core styling with FD BUSINESS colors
-│   └── game.css        # Game-specific styling
-├── js/
-│   └── app.js          # Complete game application
-└── assets/
-    └── BG.png          # Background image
-```
+- Browser-based Snake gameplay
+- High score tracking met localStorage
+- Multiple players support
+- FD BUSINESS styling
 
-## Game Controls
+**Tech stack:**
 
-- **Arrow Up**: Move snake up
-- **Arrow Down**: Move snake down
-- **Arrow Left**: Move snake left
-- **Arrow Right**: Move snake right
+- Vanilla JavaScript (ES6+)
+- HTML5 Canvas API
+- localStorage voor scores
 
-## Technical Details
+### 2. Finnhub Stock Dashboard
 
-- **Language**: Vanilla JavaScript (ES6+)
-- **Rendering**: HTML5 Canvas API
-- **Game Loop**: requestAnimationFrame (60 fps)
-- **Storage**: Browser localStorage API
-- **Performance**: <100ms input response time
-- **No Dependencies**: Pure JavaScript, no frameworks or libraries
+Een educatieve applicatie voor het analyseren van aandelenkoersen met AI-ondersteuning.
 
-## Browser Compatibility
+**Features:**
 
-Requires a modern browser with support for:
-- ES6 JavaScript
-- HTML5 Canvas
-- localStorage API
-- CSS3
+- Real-time aandelenkoersen via Finnhub API
+- AI-gegenereerde educatieve adviezen via LiteLLM proxy
+- localStorage voor persistentie
+- Volledig Nederlandse UI
 
-Tested on Chrome, Firefox, Safari, and Edge (latest versions).
+**Tech stack:**
 
-## Score Storage
+- Vanilla JavaScript, HTML5, CSS3
+- Finnhub REST API (quote endpoint)
+- LiteLLM Proxy (OpenAI-compatible)
+- Browser Fetch API
+- localStorage
 
-Scores are stored locally in the browser using localStorage:
-- Key: `snakeGameScores`
-- Format: JSON array of game rounds
-- Persistence: Survives browser restarts
-- Capacity: Subject to browser storage limits
+## 🎯 Workshop Doelen
 
-## Multiple Players
+Deze workshop leert je:
 
-While this is a single-player game (one person plays at a time), it supports tracking scores for multiple players:
-- Each player enters their name before playing
-- All scores are saved with player names
-- Top 3 high scores are displayed regardless of player
-- Players can see their personal best in the high score list
+- Browser-only applicaties bouwen zonder backend
+- Werken met externe REST APIs (Finnhub, LiteLLM)
+- AI-integratie in web applicaties
+- localStorage voor state management
+- Vanilla JavaScript best practices
+- Error handling en API rate limiting
 
-## Development
+## 🚀 Aan de Slag
 
-The game is built with:
-- No dependencies (vanilla JavaScript)
-- No build process required
-- No backend or server needed
-- Complete offline functionality
-- Single HTML file can be opened directly in browser
+### Vereisten
 
-## License
+- Moderne webbrowser (Chrome, Firefox, Safari, Edge)
+- Cursor
+- Finnhub API key (verstrekt tijdens workshop)
+- LiteLLM API key (verstrekt tijdens workshop)
 
-This is a learning project for educational purposes.
+### Snake Game
 
+**Specificaties bekijken:** `examples Snake/`
+
+1. Lees `01-constitution.md` (projectprincipes)
+2. Bekijk `02-specify.md` (feature specificatie)
+3. Bestudeer `03-plans.md` (implementatieplan)
+
+**Implementatie uitproberen:**
+
+1. Open `index.html` in je browser
+2. Speel het spel om vertrouwd te raken met browser-based development
+
+### Finnhub Dashboard
+
+**Specificaties bekijken:** `examples Finnhub/`
+
+1. Lees `01-constitution.md` (projectprincipes)
+2. Bekijk `02-specify.md` (feature specificatie)
+3. Bestudeer `03-plans.md` (implementatieplan)
+
+**Implementatie bouwen:**
+
+1. Configureer API keys in `script.js`
+2. Open de applicatie in je browser
+
+## 🛠️ Technische Principes
+
+**Browser-Only Architectuur:**
+
+- Geen backend servers
+- Geen build tools of frameworks
+- Geen npm dependencies
+- Direct te openen in browser
+
+**API Integratie:**
+
+- REST API calls via Fetch API
+- Query parameter en Bearer token authenticatie
+- Error handling voor alle status codes
+- CORS-aware development
+
+**State Management:**
+
+- localStorage voor persistentie
+- JSON serialization
+- Graceful fallbacks
+
+## 🎓 Leermateriaal
+
+Tijdens de workshop behandelen we:
+
+- Specificeren van features met Speckit
+- API configuratie en authenticatie
+- OpenAI-compatible LLM integratie
+- Debugging met browser DevTools
+- Werken binnen API constraints (free tiers)
+
+## ⚠️ Workshop Context
+
+**Belangrijk:**
+
+- API keys in client code zijn ALLEEN acceptabel voor workshop/demo doeleinden
+- Productie-applicaties vereisen backend proxy voor API calls
+- Free tier API's hebben rate limits en feature beperkingen
+- Code is geoptimaliseerd voor leesbaarheid, niet voor productie
+
+## 📝 Licentie
+
+Dit is een educatief workshop project voor leerdoeleinden.
