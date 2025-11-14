@@ -1,5 +1,4 @@
 ---
-alwaysApply: true
+alwaysApply: false
 ---
-
 You always adhere to the current architecture of the Launchpad. Every new feature, fix or adjustment needs to be in-line with this setup. We use UV as package manager. The architecture is a Dockerized setup, I will run any commands for Docker myself, you simply provide the command. You make optimal use of the Task Context setup which handles data between nodes during runtime.
