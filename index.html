@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beursinformatie Dashboard - Workshop</title>
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📈 Beursinformatie Dashboard</h1>
+            <p class="subtitle">Educatieve workshop over aandelenmarkt data met AI-ondersteuning</p>
+        </header>
+
+        <!-- Stock Selection Section -->
+        <section id="ticker-selection" class="card">
+            <h2>Aandelenselectie</h2>
+            <div class="ticker-buttons">
+                <button class="ticker-btn" data-ticker="AAPL">APPLE</button>
+                <button class="ticker-btn" data-ticker="MSFT">MICROSOFT</button>
+                <button class="ticker-btn" data-ticker="GOOGL">GOOGLE</button>
+                <button class="ticker-btn" data-ticker="TSLA">TESLA</button>
+                <button class="ticker-btn" data-ticker="NVDA">NVIDIA</button>
+                <button class="ticker-btn" data-ticker="META">META</button>
+                <button class="ticker-btn" data-ticker="NFLX">NETFLIX</button>
+                <button class="ticker-btn" data-ticker="AMD">AMD</button>
+                <button class="ticker-btn" data-ticker="INTC">INTEL</button>
+                <button class="ticker-btn" data-ticker="AMZN">AMAZON</button>
+            </div>
+            
+            <div class="manual-input">
+                <p>Of typ een ticker symbool:</p>
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="ticker-input" 
+                        placeholder="Bijv. TSLA, AAPL..."
+                        maxlength="10"
+                    >
+                    <button id="search-btn" class="btn-primary">Zoek</button>
+                </div>
+            </div>
+            
+            <div id="selection-loading" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>Gegevens laden...</p>
+            </div>
+            
+            <div id="selection-error" class="error-message hidden"></div>
+        </section>
+
+        <!-- Market Data Section -->
+        <section id="market-data" class="card hidden">
+            <h2>Marktdata</h2>
+            <div class="price-display">
+                <div class="ticker-display">
+                    <span class="label">Ticker:</span>
+                    <span id="current-ticker" class="value">-</span>
+                </div>
+                <div class="price-info">
+                    <div class="current-price">
+                        <span class="label">Huidige koers:</span>
+                        <span id="current-price" class="value price-large">-</span>
+                    </div>
+                    <div class="price-change">
+                        <span class="label">Verandering:</span>
+                        <span id="price-change" class="value">-</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chart Section - Not available on free tier -->
+        <section id="chart-container" class="card" style="display: none;">
+            <h2>Historische Koers (30 dagen)</h2>
+            <div class="info-notice">
+                <span class="info-icon">ℹ️</span>
+                <p>
+                    <strong>Historische data niet beschikbaar</strong><br>
+                    Het gratis Finnhub API plan ondersteunt geen historische koersdata.
+                    Alleen real-time quotes zijn beschikbaar voor deze workshop.
+                </p>
+            </div>
+        </section>
+
+        <!-- AI Advice Section -->
+        <section id="ai-advice" class="card hidden">
+            <h2>AI-advies</h2>
+            <button id="generate-advice-btn" class="btn-advice" disabled>
+                Genereer advies
+            </button>
+            
+            <div id="advice-loading" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>AI-analyse wordt gegenereerd...</p>
+            </div>
+            
+            <div id="advice-response" class="advice-content hidden"></div>
+            
+            <div id="advice-disclaimer" class="disclaimer hidden">
+                <span class="disclaimer-icon">⚠️</span>
+                <p>
+                    <strong>Dit is geen financieel advies.</strong> 
+                    Deze informatie is uitsluitend bedoeld voor educatieve doeleinden. 
+                    Raadpleeg altijd een financieel adviseur voordat u investeringsbeslissingen neemt.
+                </p>
+            </div>
+            
+            <div id="advice-error" class="error-message hidden"></div>
+        </section>
+
+        <!-- Advice History Section (Optional) -->
+        <section id="advice-history" class="card hidden">
+            <h2>Eerdere adviezen</h2>
+            <div id="history-list" class="history-list">
+                <p class="empty-state">Geen adviesgeschiedenis beschikbaar</p>
+            </div>
+        </section>
+
+        <!-- Reset Button -->
+        <div class="actions">
+            <button id="reset-btn" class="btn-reset">Wis gegevens</button>
+        </div>
+
+        <!-- Storage Notice -->
+        <div id="storage-notice" class="notice hidden"></div>
+
+        <footer>
+            <p>⚠️ <strong>Workshop Versie:</strong> API-sleutels zijn zichtbaar in de broncode. 
+            Gebruik dit alleen voor educatieve doeleinden.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+

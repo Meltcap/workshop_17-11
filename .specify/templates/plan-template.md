@@ -1,104 +1,118 @@
-# Implementation Plan: [FEATURE]
+# Implementation Plan: [FEATURE_NAME]
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
-
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
-
-## Summary
-
-[Extract from feature spec: primary requirement + technical approach from research]
-
-## Technical Context
-
-<!--
-  ACTION REQUIRED: Replace the content in this section with the technical details
-  for the project. The structure here is presented in advisory capacity to guide
-  the iteration process.
--->
-
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [single/web/mobile - determines source structure]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Specification:** [Link to spec file]  
+**Target Date:** [YYYY-MM-DD]  
+**Status:** [Planning | In Progress | Completed]  
+**Constitution Version:** v[X.Y.Z]
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+Before proceeding, verify alignment with project principles:
 
-[Gates determined based on constitution file]
+- [ ] **Browser-Only Architecture:** No backend/build tools required
+- [ ] **Minimal Tech Stack:** Uses only HTML/CSS/JS + whitelisted CDN libraries
+- [ ] **Radical Simplicity:** Implementation approach is straightforward
+- [ ] **Dutch-First UX:** All user-facing text planned in Dutch
+- [ ] **Lightweight State:** localStorage usage is minimal and graceful
+- [ ] **Responsible AI:** Disclaimers and educational framing included
+- [ ] **Manual Validation:** Testing approach is practical for workshop context
 
-## Project Structure
+## Implementation Steps
 
-### Documentation (this feature)
+### 1. [Step Name]
 
-```text
-specs/[###-feature]/
-├── plan.md              # This file (/speckit.plan command output)
-├── research.md          # Phase 0 output (/speckit.plan command)
-├── data-model.md        # Phase 1 output (/speckit.plan command)
-├── quickstart.md        # Phase 1 output (/speckit.plan command)
-├── contracts/           # Phase 1 output (/speckit.plan command)
-└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
+**Files to modify:**
+- `[filename]`
+
+**Changes:**
+- [Description of changes]
+
+**Constitution alignment:**
+- [Which principle(s) this addresses]
+
+### 2. [Step Name]
+
+**Files to modify:**
+- `[filename]`
+
+**Changes:**
+- [Description of changes]
+
+**Constitution alignment:**
+- [Which principle(s) this addresses]
+
+### 3. [Step Name]
+
+**Files to modify:**
+- `[filename]`
+
+**Changes:**
+- [Description of changes]
+
+**Constitution alignment:**
+- [Which principle(s) this addresses]
+
+## API Keys Configuration
+
+**Location:** Top of `script.js`
+
+```javascript
+const FINNHUB_API_KEY = 'YOUR_KEY_HERE'; // https://finnhub.io
+const GEMINI_API_KEY = 'YOUR_KEY_HERE';  // https://aistudio.google.com
 ```
 
-### Source Code (repository root)
-<!--
-  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
-  for this feature. Delete unused options and expand the chosen structure with
-  real paths (e.g., apps/admin, packages/something). The delivered plan must
-  not include Option labels.
--->
+**⚠️ Workshop Warning:** API keys in client code are acceptable ONLY for educational demos. Production apps require backend proxies.
 
-```text
-# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
-src/
-├── models/
-├── services/
-├── cli/
-└── lib/
+## Dependencies
 
-tests/
-├── contract/
-├── integration/
-└── unit/
+### External Libraries (CDN)
 
-# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
-backend/
-├── src/
-│   ├── models/
-│   ├── services/
-│   └── api/
-└── tests/
+- Chart.js: `https://cdn.jsdelivr.net/npm/chart.js`
 
-frontend/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   └── services/
-└── tests/
+### External APIs
 
-# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
-api/
-└── [same as backend above]
+- **Finnhub API:** https://finnhub.io/docs/api/introduction
+  - Quote endpoint
+  - Candle endpoint
+- **Google Gemini API:** https://ai.google.dev/gemini-api/docs
+  - Model: `gemini-2.5-flash`
+  - REST API calls
 
-ios/ or android/
-└── [platform-specific structure: feature modules, UI flows, platform tests]
-```
+## Error Handling Strategy
 
-**Structure Decision**: [Document the selected structure and reference the real
-directories captured above]
+- **Finnhub errors:** [Approach]
+- **Gemini errors:** [Approach]
+- **localStorage unavailable:** [Approach]
+- **Invalid user input:** [Approach]
 
-## Complexity Tracking
+## Manual Testing Plan
 
-> **Fill ONLY if Constitution Check has violations that must be justified**
+### Happy Path Validation
 
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+1. [Test step 1]
+2. [Test step 2]
+3. [Test step 3]
+
+### Error States
+
+1. [Error scenario 1] → [Expected behavior]
+2. [Error scenario 2] → [Expected behavior]
+
+### localStorage Persistence
+
+1. [Persistence test 1]
+2. [Persistence test 2]
+
+## Rollout Checklist
+
+- [ ] All files created/modified
+- [ ] API keys documented (placeholders in code)
+- [ ] Dutch UI text verified
+- [ ] AI disclaimers present
+- [ ] localStorage reset mechanism works
+- [ ] Manual testing completed
+- [ ] README updated with setup instructions
+
+## Notes
+
+[Any additional implementation notes, gotchas, or considerations]

@@ -1,115 +1,90 @@
-# Feature Specification: [FEATURE NAME]
+# Specification: [FEATURE_NAME]
 
-**Feature Branch**: `[###-feature-name]`  
-**Created**: [DATE]  
-**Status**: Draft  
-**Input**: User description: "$ARGUMENTS"
+**Status:** [Draft | Approved | Implemented | Deprecated]  
+**Created:** [YYYY-MM-DD]  
+**Last Updated:** [YYYY-MM-DD]  
+**Constitution Alignment:** v[X.Y.Z]
 
-## User Scenarios & Testing *(mandatory)*
+## Overview
 
-<!--
-  IMPORTANT: User stories should be PRIORITIZED as user journeys ordered by importance.
-  Each user story/journey must be INDEPENDENTLY TESTABLE - meaning if you implement just ONE of them,
-  you should still have a viable MVP (Minimum Viable Product) that delivers value.
-  
-  Assign priorities (P1, P2, P3, etc.) to each story, where P1 is the most critical.
-  Think of each story as a standalone slice of functionality that can be:
-  - Developed independently
-  - Tested independently
-  - Deployed independently
-  - Demonstrated to users independently
--->
+[Brief description of what this feature does and why it exists]
 
-### User Story 1 - [Brief Title] (Priority: P1)
+## Constitution Compliance Check
 
-[Describe this user journey in plain language]
+- [ ] Browser-Only Architecture: No backend/tooling introduced
+- [ ] Minimal Technology Stack: Uses only whitelisted technologies
+- [ ] Radical Simplicity: Code remains explicit and readable
+- [ ] Dutch-First UX: All UI text in Dutch
+- [ ] Lightweight State Management: Uses localStorage appropriately
+- [ ] Responsible AI Integration: Includes disclaimers if AI-related
+- [ ] Manual Validation: Testing approach documented
 
-**Why this priority**: [Explain the value and why it has this priority level]
-
-**Independent Test**: [Describe how this can be tested independently - e.g., "Can be fully tested by [specific action] and delivers [specific value]"]
-
-**Acceptance Scenarios**:
-
-1. **Given** [initial state], **When** [action], **Then** [expected outcome]
-2. **Given** [initial state], **When** [action], **Then** [expected outcome]
-
----
-
-### User Story 2 - [Brief Title] (Priority: P2)
-
-[Describe this user journey in plain language]
-
-**Why this priority**: [Explain the value and why it has this priority level]
-
-**Independent Test**: [Describe how this can be tested independently]
-
-**Acceptance Scenarios**:
-
-1. **Given** [initial state], **When** [action], **Then** [expected outcome]
-
----
-
-### User Story 3 - [Brief Title] (Priority: P3)
-
-[Describe this user journey in plain language]
-
-**Why this priority**: [Explain the value and why it has this priority level]
-
-**Independent Test**: [Describe how this can be tested independently]
-
-**Acceptance Scenarios**:
-
-1. **Given** [initial state], **When** [action], **Then** [expected outcome]
-
----
-
-[Add more user stories as needed, each with an assigned priority]
-
-### Edge Cases
-
-<!--
-  ACTION REQUIRED: The content in this section represents placeholders.
-  Fill them out with the right edge cases.
--->
-
-- What happens when [boundary condition]?
-- How does system handle [error scenario]?
-
-## Requirements *(mandatory)*
-
-<!--
-  ACTION REQUIRED: The content in this section represents placeholders.
-  Fill them out with the right functional requirements.
--->
+## Requirements
 
 ### Functional Requirements
 
-- **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]  
-- **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
-- **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
-- **FR-005**: System MUST [behavior, e.g., "log all security events"]
+1. [Requirement 1]
+2. [Requirement 2]
+3. [Requirement 3]
 
-*Example of marking unclear requirements:*
+### Non-Functional Requirements
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- **Performance:** [Expectations]
+- **Usability:** [User experience goals]
+- **Error Handling:** [How errors are managed]
 
-### Key Entities *(include if feature involves data)*
+## User Interface
 
-- **[Entity 1]**: [What it represents, key attributes without implementation]
-- **[Entity 2]**: [What it represents, relationships to other entities]
+### UI Text (Dutch)
 
-## Success Criteria *(mandatory)*
+- [List all Dutch UI strings]
+- [Buttons, labels, messages]
+- [Error states]
 
-<!--
-  ACTION REQUIRED: Define measurable success criteria.
-  These must be technology-agnostic and measurable.
--->
+### Layout
 
-### Measurable Outcomes
+[Describe layout and visual structure]
 
-- **SC-001**: [Measurable metric, e.g., "Users can complete account creation in under 2 minutes"]
-- **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
-- **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
-- **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+## Technical Design
+
+### Data Flow
+
+[Describe how data moves through the system]
+
+### API Integration
+
+- **Finnhub API:**
+  - Endpoints used: [list]
+  - Error handling: [approach]
+
+- **Gemini API:**
+  - Model: gemini-2.5-flash
+  - Prompt structure: [describe]
+  - Disclaimer handling: [approach]
+
+### State Management
+
+**localStorage structure:**
+```json
+{
+  "key": "description"
+}
+```
+
+## Out of Scope
+
+[What this feature explicitly does NOT do]
+
+## Success Criteria
+
+- [ ] [Criterion 1]
+- [ ] [Criterion 2]
+- [ ] [Criterion 3]
+
+## Manual Testing Checklist
+
+- [ ] Happy path validation
+- [ ] Error state display
+- [ ] localStorage persistence
+- [ ] UI text in Dutch
+- [ ] Disclaimers present (if AI-related)

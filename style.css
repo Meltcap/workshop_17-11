@@ -1,0 +1,579 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #6c757d;
+    --text-color: #212529;
+    --border-color: #dee2e6;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--dark-gray);
+    font-size: 1rem;
+}
+
+/* Card Component */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+/* Ticker Selection */
+.ticker-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.ticker-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ticker-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.ticker-btn:active {
+    transform: translateY(0);
+}
+
+.ticker-btn.selected {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 700;
+}
+
+.manual-input {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+.manual-input p {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+#ticker-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+#ticker-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#ticker-input::placeholder {
+    color: var(--dark-gray);
+}
+
+/* Buttons */
+.btn-primary {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    background: var(--medium-gray);
+    color: var(--dark-gray);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-advice {
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    background: var(--success-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn-advice:hover:not(:disabled) {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-advice:disabled {
+    background: var(--medium-gray);
+    color: var(--dark-gray);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-reset {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: var(--danger-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Market Data Display */
+.price-display {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ticker-display {
+    font-size: 1.2rem;
+}
+
+.ticker-display .value {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.price-info {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.current-price,
+.price-change {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-weight: 600;
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.price-large {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.price-change .value {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.positive {
+    color: var(--success-color);
+}
+
+.negative {
+    color: var(--danger-color);
+}
+
+/* Chart */
+.chart-wrapper {
+    position: relative;
+    height: 400px;
+    margin-top: 20px;
+}
+
+#price-chart {
+    max-height: 400px;
+}
+
+/* AI Advice */
+.advice-content {
+    padding: 20px;
+    background: var(--light-gray);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 1rem;
+    color: var(--text-color);
+    animation: fadeIn 0.5s ease;
+}
+
+.disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: #fff3cd;
+    border: 2px solid var(--warning-color);
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.disclaimer-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.disclaimer p {
+    margin: 0;
+    color: #856404;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.disclaimer strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Info Notice (for informational messages) */
+.info-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: #d1ecf1;
+    border: 2px solid #17a2b8;
+    border-radius: 6px;
+    margin-top: 12px;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.info-notice p {
+    margin: 0;
+    color: #0c5460;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.info-notice strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Advice History */
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.history-item {
+    padding: 16px;
+    background: var(--light-gray);
+    border-radius: 6px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.history-item.optimistisch {
+    border-left-color: var(--success-color);
+}
+
+.history-item.voorzichtig {
+    border-left-color: var(--danger-color);
+}
+
+.history-item.neutraal {
+    border-left-color: var(--dark-gray);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.history-ticker {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.history-timestamp {
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+}
+
+.history-label {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.history-label.optimistisch {
+    background: #d4edda;
+    color: #155724;
+}
+
+.history-label.voorzichtig {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.history-label.neutraal {
+    background: var(--medium-gray);
+    color: var(--dark-gray);
+}
+
+.history-snippet {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--dark-gray);
+    padding: 40px;
+    font-style: italic;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 16px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--medium-gray);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner p {
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+/* Error Messages */
+.error-message {
+    padding: 16px;
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    margin-top: 16px;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Notice Messages */
+.notice {
+    padding: 16px;
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Actions */
+.actions {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: var(--shadow);
+}
+
+footer p {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ticker-buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .price-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .chart-wrapper {
+        height: 300px;
+    }
+    
+    .price-large {
+        font-size: 2rem;
+    }
+    
+    .price-change .value {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .card {
+        padding: 16px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .ticker-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .ticker-btn {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+

@@ -8,29 +8,28 @@ I want to create a single-page web app that:
 • The entire user interface (UI), including all labels, buttons, error messages, instructions, and section titles, must be fully in Dutch.
 
 Lets the user select a stock ticker in two ways:
-• By clicking one of ~10 predefined Dutch company tickers (e.g. ASML, ADYEN, ING, UNA, AD, HEIA, PHIA, RAND, KPN, DSFIR — exact ticker format may need to match Finnhub’s requirements).
+• By clicking one of ~10 predefined US stock tickers (e.g. AAPL, MSFT, GOOGL, TSLA, NVDA, META, NFLX, AMD, INTC, AMZN).
 • By manually typing a ticker symbol into a text input field.
 
-Fetches the latest price information for the selected symbol from the Finnhub REST API.
+Fetches the latest price information for the selected symbol from the Finnhub REST API (quote endpoint only, free tier).
 
-Fetches daily historical candle data for approximately the last 30 calendar days for that symbol.
+**Note:** Historical candle data is NOT available on Finnhub free tier. No chart will be displayed.
 
 Displays:
 • The current price.
 • The absolute and percentage change compared to the previous close.
-• A simple line chart of the closing prices over time using Chart.js.
 
 Provides a clearly separated AI advice area that:
-• Shows a button “Genereer advies” once market data has been successfully loaded.
-• When clicked, sends a structured prompt to the Google Gemini API containing:
+• Shows a button "Genereer advies" once market data has been successfully loaded.
+• When clicked, sends a structured prompt to the LiteLLM proxy (OpenAI-compatible) containing:
   – The ticker symbol.
-  – A short, human-readable summary of the recent price movement (e.g. trend direction, volatility).
-  – Any other high-level context derived from the loaded data (e.g. “prijs is omhoog/omlaag X% over de laatste 30 dagen”).
+  – A short, human-readable summary of the daily price movement (e.g. "stijgend +2.5% vandaag").
+  – Context derived from the quote data (current price, daily change percentage).
 • Receives a short, text-only answer that:
-  – Explains recent price behaviour in simple language.
+  – Explains the daily price behaviour in simple language.
   – Discusses potential risks and opportunities in a balanced way.
   – Includes an explicit disclaimer that this is not financial advice and is for educational purposes only.
-• Renders this answer in the UI in a clearly labelled “AI-advies” section, below the chart.
+• Renders this answer in the UI in a clearly labelled "AI-advies" section.
 
 Uses localStorage to persist a small JSON object with:
 • The last selected ticker (so it can be reloaded on page refresh).
@@ -44,7 +43,7 @@ Provides a simple way to reset stored data (e.g. a “Reset app” or “Wis geg
 Non-goals / Out of scope for this feature:
 • No authentication, user accounts, or server-side persistence.
 • No portfolio management, orders, or realistic trading simulation.
-• No complex chart interactions (zooming, panning, overlays of multiple symbols).
+• No historical data or charts (Finnhub free tier limitation).
 • No advanced AI features such as multi-turn chat, tools, or retrieval-augmented generation.
-• No additional external APIs beyond Finnhub (for prices) and Google Gemini (for AI text).
+• No additional external APIs beyond Finnhub (for quotes) and LiteLLM proxy (for AI text).
 • No back-end proxy for APIs in this Level 1 version.
