@@ -1,7 +1,5 @@
 # 01-constitution.md
 
-✅ **STATUS: COMPLETED** - Constitution created at `.specify/memory/constitution.md`
-
 speckit constitution
 
 We are creating a very simple, browser-only educational project for a workshop about stock market data, with a small AI-powered advice feature.
