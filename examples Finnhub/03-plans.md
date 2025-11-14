@@ -83,8 +83,6 @@ const FINNHUB_API_KEY = 'YOUR_FINNHUB_KEY_HERE';
 const LITELLM_API_KEY = 'YOUR_LITELLM_KEY_HERE';
 ```
 
-**⚠️ Mention clearly:** This is only acceptable for workshop/demo purposes. Production requires backend proxy.
-
 ## Error handling and edge cases (technical)
 
 Handle:
